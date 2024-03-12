@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./components";
+
+* {
+    font-family: 'Inika', serif;
+    box-sizing: border-box;
+    color: white;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100vw;
+}

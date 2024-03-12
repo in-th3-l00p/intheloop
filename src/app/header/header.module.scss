@@ -1,0 +1,47 @@
+@import "../../styles/constants";
+
+.header {
+    @apply
+    absolute z-20 w-screen top-0 left-0
+    flex justify-around items-center
+    text-white py-2;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.sidebarContainer {
+    @apply absolute top-0 left-0 z-30 w-screen h-screen;
+    overflow-x: hidden;
+
+    .sidebarOverlay {
+        @apply
+        absolute top-0 left-0 w-full h-full
+        backdrop-blur-md;
+        background-color: rgba(0, 0, 0, 0.5);
+        animation: appear $animation-duration ease-in-out;
+    }
+
+    .sidebar {
+        @apply
+        absolute top-0 right-0 w-full h-full
+        sm:w-64 text-white py-8;
+        animation: slideIn $animation-duration ease-in-out;
+        background-image: linear-gradient($primary, $secondary);
+        background-size: cover;
+
+        .sidebarLink {
+            @apply
+                text-xl w-full py-4 px-8
+                hover:bg-secondary transition-all;
+        }
+    }
+
+    @keyframes appear {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+        from { transform: translateX(100%); }
+        to { transform: translateX(0); }
+    }
+}
