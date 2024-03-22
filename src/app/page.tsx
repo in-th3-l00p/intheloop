@@ -132,10 +132,10 @@ export default function Home() {
                     {/*/>*/}
 
                     <BrowseItem
-                        caption="cv"
+                        caption="Resume"
                         imageSrc="/home/browse/cv.png"
-                        imageAlt="cv"
-                        redirectTo="/cv"
+                        imageAlt="resume"
+                        redirectTo="/Resume.pdf"
                     />
                 </div>
             </section>

@@ -1,3 +1,6 @@
+import Link from "next/link";
+import React from "react";
+
 export default function About() {
     return (
         <section className="padding-container">
@@ -29,9 +32,14 @@ export default function About() {
                 {`Thank you for visiting my website. If you're interested in working together or simply want to connect, please don't hesitate to contact me.`}
             </p>
 
-            <p className={"font-bold"}>
+            <p className={"font-bold mb-8"}>
                 {`Together, let's turn innovative ideas into reality!`}
             </p>
+
+            <Link
+                href={"/Resume.pdf"}
+                className={"btn mb-8"}
+            >Download Resume</Link>
         </section>
     );
 }
