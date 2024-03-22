@@ -14,6 +14,7 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
           cd ~/intheloop
+          git pull origin main
           npm run build
           docker build -t personal-image .
           docker stop personal
