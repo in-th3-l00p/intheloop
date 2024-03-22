@@ -15,7 +15,7 @@ export default function Footer() {
     return (
         <footer className="bg-zinc-950 grid grid-cols-2 py-4 px-8">
             <div
-                className="justify-self-center flex gap-4 items-center col-span-2"
+                className="justify-self-center flex flex-wrap gap-4 items-center col-span-2"
             >
                 <Image
                     src="/logo.svg" alt="intheloop logo"

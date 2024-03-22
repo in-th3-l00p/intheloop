@@ -24,16 +24,16 @@
 }
 
 .browse {
-    @apply relative bg-primary;
+    @apply relative bg-primary border-t-2 border-white;
     padding-top: 1.5rem !important;
 
-    &::before {
-        content: "";
-        @apply absolute top-0 left-0 bg-primary border-t-2;
-        width: 120%;
-        height: 50px;
-        transform: translateY(-50%) rotateZ(1deg);
-    }
+    //&::before {
+    //    content: "";
+    //    @apply absolute top-0 left-0 bg-primary border-t-2;
+    //    width: 120%;
+    //    height: 50px;
+    //    transform: translateY(-50%) rotateZ(1deg);
+    //}
 
     .browseItem {
         @apply relative max-w-md mx-auto
