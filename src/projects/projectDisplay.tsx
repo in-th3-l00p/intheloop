@@ -1,7 +1,7 @@
 "use client";
 
+import {useEffect, useRef, useState} from "react";
 import Image from "next/image";
-import {useEffect, useState} from "react";
 
 interface Project {
     title: string;
@@ -10,9 +10,8 @@ interface Project {
     images: string[];
 }
 
-function ProjectDisplay({ title, description, shortDescription, images }: Project) {
-    "use client";
-
+export function ProjectDisplay({title, description, shortDescription, images}: Project) {
+    const modalRef = useRef<HTMLDivElement | null>(null);
     const [opened, setOpened] = useState(false);
     const [windowSize, setWindowSize] = useState({
         width: 0,
@@ -32,12 +31,27 @@ function ProjectDisplay({ title, description, shortDescription, images }: Projec
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
+    useEffect(() => {
+        if (!modalRef.current)
+            return;
+        // const handleClick = (event) => {
+            // console.log(event);
+            // if (modalRef.current && !modalRef.current.contains(event.target as Node))
+            //     setOpened(false);
+        // }
+        //
+        // window.addEventListener("keydown", handleClick);
+        // console.log("event listener added");
+        // return () => window.removeEventListener("mousedown", handleClick);
+    }, [modalRef.current]);
+
     if (images.length < 1)
         return <></>;
     return (
         <>
             {opened && (
                 <div
+                    ref={modalRef}
                     className={
                         "fixed z-50 top-0 left-0 w-screen h-screen " +
                         "flex justify-center items-center bg-black bg-opacity-50"
@@ -90,27 +104,12 @@ function ProjectDisplay({ title, description, shortDescription, images }: Projec
 
                 <div
                     className="absolute left-1/2 -translate-x-1/2 bottom-0 p-2 rounded-md mb-2"
-                    style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}
+                    style={{backgroundColor: "rgba(0, 0, 0, 0.6)"}}
                 >
                     <h2 className={"font-bold text-center"}>{title}</h2>
                     <p>{!!shortDescription ? shortDescription : description.substring(0, 10)}</p>
                 </div>
             </button>
         </>
-    );
-}
-
-export default function Projects() {
-    return (
-        <section className={"padding-container"}>
-            <h1 className={"text-4xl pb-4 border-b mb-4 pt-8"}>projects</h1>
-
-            <ProjectDisplay
-                title={"Farmcheck"}
-                shortDescription={"Platform for digitalizing agriculture"}
-                description={"A web application for farmers to manage their crops and livestock"}
-                images={[ "/screenshots/farmcheck/home.png" ]}
-            />
-        </section>
     );
 }
