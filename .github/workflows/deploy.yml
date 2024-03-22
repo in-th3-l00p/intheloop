@@ -15,7 +15,7 @@ jobs:
         script: |
           cd ~/intheloop
           npm run build
-          docker build -t personal-image
+          docker build -t personal-image .
           docker stop personal
           docker rm -f personal
           docker run --name personal -p 3000:3000 -d personal-image
