@@ -1,4 +1,4 @@
-import {ProjectDisplay} from "@/projects/projectDisplay";
+import {ProjectDisplay} from "./projectDisplay";
 
 export default function Projects() {
     return (
