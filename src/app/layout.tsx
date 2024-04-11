@@ -8,8 +8,8 @@ import Footer from "@/app/footer/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    title: "intheloop",
-    description: "Tisca Catalin's personal website",
+    title: "Tișcă Cătălin",
+    description: "Explore Tișcă Cătălin’s journey in software engineering and content creation. Gain insights into his diverse projects and the passion driving in tech and creativity on his personal website.",
 };
 
 export default function RootLayout({
