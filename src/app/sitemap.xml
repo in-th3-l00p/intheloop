@@ -17,4 +17,16 @@
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
     </url>
+    <url>
+        <loc>https://tiscacatalin.com/blog</loc>
+        <lastmod>2024-04-11T11:02:24.021Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://tiscacatalin.com/blog/the-importance-of-an-online-pressence</loc>
+        <lastmod>2024-04-11T11:02:24.021Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
 </urlset>
