@@ -1,10 +1,11 @@
 import Link from "next/link";
 import React from "react";
+import PageTitle from "@/components/PageTitle";
 
 export default function About() {
     return (
         <section className="padding-container">
-            <h1 className="text-4xl pb-4 border-b mb-4 pt-8">about</h1>
+            <PageTitle>about</PageTitle>
 
             <p className={"mb-4"}>
                 {`Hello! I'm Tișcă Cătălin, a passionate 17-year-old high school student from Romania with a keen interest and expertise in various programming domains. My journey into the world of programming has been both exciting and rewarding, allowing me to delve deep into web development and computer science.`}

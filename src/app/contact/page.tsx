@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ContactSubmission from "@/mongoose/schemas/ContactSubmission";
 import {redirect} from "next/navigation";
+import PageTitle from "@/components/PageTitle";
 
 async function saveSubmission(formData: FormData) {
     "use server";
@@ -58,7 +59,7 @@ async function Channel({
 export default function Contact() {
     return (
         <section className="padding-container">
-            <h1 className="text-4xl pb-4 border-b mb-4 pt-8">contact</h1>
+            <PageTitle>contact</PageTitle>
 
             <p>Feel free to contact me through the channels provided below, or submit your message through the form provided.</p>
 

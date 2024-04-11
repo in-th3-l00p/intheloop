@@ -33,8 +33,8 @@ export default function Footer() {
                 <li><Link href="/contact" className="hover:underline">contact</Link></li>
             </ul>
             <ul className="justify-self-start ms-8 flex flex-col gap-2">
-                {/*<li><Link href="/blog" className="hover:underline">blog</Link></li>*/}
-                <li><Link href="/projects" className="hover:underline">projects</Link></li>
+                <li><Link href="/blog" className="hover:underline">blog</Link></li>
+                {/*<li><Link href="/projects" className="hover:underline">projects</Link></li>*/}
                 <li><Link href="/Resume.pdf" className="hover:underline">resume</Link></li>
             </ul>
             <p className="col-span-2 text-center mt-4 italic text-zinc-500">all rights reserved ©</p>
