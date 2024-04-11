@@ -37,8 +37,8 @@ export default function Home() {
         <>
             <section className={style.hero}>
                 <div className="fadein">
-                    <h1 className="text-4xl mb-4">intheloop</h1>
-                    <h2 className="text-xl mb-8 border-b pb-8">Tișcă Cătălin</h2>
+                    <h1 className="text-4xl mb-4">Tișcă Cătălin</h1>
+                    <h2 className="text-xl mb-8 border-b pb-8">intheloop</h2>
                     <div className={"flex flex-wrap gap-4"}>
                         <Link href={"/about"} className="btn">
                             about
