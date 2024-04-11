@@ -11,7 +11,7 @@ interface Project {
 }
 
 export function ProjectDisplay({title, description, shortDescription, images}: Project) {
-    const modalRef = useRef<HTMLDivElement | null>(null);
+    const [modal, setModal] = useState<HTMLDivElement | null>(null);
     const [opened, setOpened] = useState(false);
     const [windowSize, setWindowSize] = useState({
         width: 0,
@@ -31,33 +31,24 @@ export function ProjectDisplay({title, description, shortDescription, images}: P
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    useEffect(() => {
-        if (!modalRef.current)
-            return;
-        // const handleClick = (event) => {
-            // console.log(event);
-            // if (modalRef.current && !modalRef.current.contains(event.target as Node))
-            //     setOpened(false);
-        // }
-        //
-        // window.addEventListener("keydown", handleClick);
-        // console.log("event listener added");
-        // return () => window.removeEventListener("mousedown", handleClick);
-    }, [modalRef.current]);
-
     if (images.length < 1)
         return <></>;
     return (
         <>
             {opened && (
                 <div
-                    ref={modalRef}
                     className={
                         "fixed z-50 top-0 left-0 w-screen h-screen " +
                         "flex justify-center items-center bg-black bg-opacity-50"
                     }
+                    onClick={(e) => {
+                        // @ts-ignore
+                        if (!modal?.contains(e.target as Node))
+                            setOpened(false)
+                    }}
                 >
                     <section
+                        ref={setModal}
                         className={
                             "bg-primary w-full h-full max-w-[1000px] max-h-[700px] " +
                             (windowSize.width > 1000 || windowSize.height > 700 ? "rounded-md" : "")

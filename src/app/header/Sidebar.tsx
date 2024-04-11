@@ -59,7 +59,8 @@ export const Sidebar: React.FC<SidebarProps> = ({opened, setOpened}) => {
                     <SidebarLink href={"/"} setOpened={setOpened}>home</SidebarLink>
                     <SidebarLink href={"/about"} setOpened={setOpened}>about</SidebarLink>
                     <SidebarLink href={"/contact"} setOpened={setOpened}>contact</SidebarLink>
-                    {/*<Sidebar href={"/projects"} setOpened={setOpened}>projects</Sidebar>*/}
+                    <SidebarLink href={"/blog"} setOpened={setOpened}>blog</SidebarLink>
+                    {/*<SidebarLink href={"/projects"} setOpened={setOpened}>projects</SidebarLink>*/}
                 </div>
 
                 {width < smallBreakpoint && (

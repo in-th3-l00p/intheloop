@@ -51,7 +51,7 @@ export default function Home() {
                 <Image
                     src="/home/programmer.jpg" alt="programmer"
                     loading="lazy"
-                    className="w-32 sm:w-64 rounded-lg shadow-slate-500 shadow-lg fadein"
+                    className="w-32 sm:w-64 rounded-lg white-shadow-lg fadein"
                     width={400}
                     height={400}
                 />
@@ -97,7 +97,7 @@ export default function Home() {
                     <Image
                         src="/home/thworldisyours.png"
                         alt="the world is yours"
-                        className="min-w-32 rounded-lg shadow-slate-500 shadow-lg block mx-auto"
+                        className="min-w-32 rounded-lg white-shadow-lg block mx-auto"
                         width={200}
                         height={200}
                     />
@@ -136,6 +136,13 @@ export default function Home() {
                         imageSrc="/home/browse/cv.png"
                         imageAlt="resume"
                         redirectTo="/Resume.pdf"
+                    />
+
+                    <BrowseItem
+                        caption="blog"
+                        imageSrc="/home/browse/blog.png"
+                        imageAlt="blog"
+                        redirectTo="/blog"
                     />
                 </div>
             </section>
