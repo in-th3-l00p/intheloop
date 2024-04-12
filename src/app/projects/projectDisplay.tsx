@@ -2,6 +2,7 @@
 
 import {useEffect, useRef, useState} from "react";
 import Image from "next/image";
+import * as Icon from "react-feather";
 
 interface Project {
     title: string;
@@ -11,7 +12,7 @@ interface Project {
 }
 
 export function ProjectDisplay({title, description, shortDescription, images}: Project) {
-    const [modal, setModal] = useState<HTMLDivElement | null>(null);
+    const modal = useRef<HTMLDivElement>(null);
     const [opened, setOpened] = useState(false);
     const [windowSize, setWindowSize] = useState({
         width: 0,
@@ -42,13 +43,12 @@ export function ProjectDisplay({title, description, shortDescription, images}: P
                         "flex justify-center items-center bg-black bg-opacity-50"
                     }
                     onClick={(e) => {
-                        // @ts-ignore
-                        if (!modal?.contains(e.target as Node))
+                        if (!modal.current?.contains(e.target as Node))
                             setOpened(false)
                     }}
                 >
                     <section
-                        ref={setModal}
+                        ref={modal}
                         className={
                             "bg-primary w-full h-full max-w-[1000px] max-h-[700px] " +
                             (windowSize.width > 1000 || windowSize.height > 700 ? "rounded-md" : "")
@@ -59,19 +59,13 @@ export function ProjectDisplay({title, description, shortDescription, images}: P
 
                             <button
                                 className={
-                                    "rounded-full shadow-slate-500 shadow-md" +
-                                    " hover:shadow-slate-500 hover:shadow-lg"
+                                    "rounded-full white-shadow" +
+                                    " hover:white-shadow-lg p-1"
                                 }
                                 onClick={() => setOpened(false)
                                 }
                             >
-                                <Image
-                                    src={"/icons/close.svg"}
-                                    alt={title}
-                                    width={400}
-                                    height={300}
-                                    className={"invert w-8 h-8"}
-                                />
+                                <Icon.X />
                             </button>
                         </div>
 

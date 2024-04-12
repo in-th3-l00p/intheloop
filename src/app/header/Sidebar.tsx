@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import style from "@/app/header/header.module.scss";
 import Image from "next/image";
 import Link from "next/link";
+import * as Icon from "react-feather";
 
 function SidebarLink({href, setOpened, children}: {
     href: string,
@@ -58,9 +59,9 @@ export const Sidebar: React.FC<SidebarProps> = ({opened, setOpened}) => {
                 <div className={"flex flex-col"}>
                     <SidebarLink href={"/"} setOpened={setOpened}>home</SidebarLink>
                     <SidebarLink href={"/about"} setOpened={setOpened}>about</SidebarLink>
-                    <SidebarLink href={"/contact"} setOpened={setOpened}>contact</SidebarLink>
                     <SidebarLink href={"/blog"} setOpened={setOpened}>blog</SidebarLink>
-                    {/*<SidebarLink href={"/projects"} setOpened={setOpened}>projects</SidebarLink>*/}
+                    <SidebarLink href={"/projects"} setOpened={setOpened}>projects</SidebarLink>
+                    <SidebarLink href={"/contact"} setOpened={setOpened}>contact</SidebarLink>
                 </div>
 
                 {width < smallBreakpoint && (
@@ -68,16 +69,11 @@ export const Sidebar: React.FC<SidebarProps> = ({opened, setOpened}) => {
                         type="button"
                         onClick={() => setOpened(false)}
                         className={
-                            "bg-zinc-950 p-1 rounded-full shadow-zinc-600 shadow-md absolute " +
-                            "top-5 left-5 hover:bg-zinc-800 hover:shadow-zinc-600 hover:shadow-lg transition-all"
+                            "bg-zinc-950 p-1 rounded-full white-shadow absolute " +
+                            "top-5 left-5 hover:bg-zinc-800 hover:white-shadow-lg transition-all"
                         }
                     >
-                        <Image
-                            src="/icons/close.svg"
-                            alt="close"
-                            width={20} height={20}
-                            className="invert"
-                        />
+                        <Icon.X />
                     </button>
                 )}
             </nav>

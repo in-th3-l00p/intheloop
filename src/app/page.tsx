@@ -124,12 +124,12 @@ export default function Home() {
                         redirectTo="/contact"
                     />
 
-                    {/*<BrowseItem*/}
-                    {/*    caption="projects"*/}
-                    {/*    imageSrc="/home/browse/projects.png"*/}
-                    {/*    imageAlt="projects"*/}
-                    {/*    redirectTo="/projects"*/}
-                    {/*/>*/}
+                    <BrowseItem
+                        caption="projects"
+                        imageSrc="/home/browse/projects.png"
+                        imageAlt="projects"
+                        redirectTo="/projects"
+                    />
 
                     <BrowseItem
                         caption="resume"
