@@ -31,7 +31,7 @@ interface IndexBlogPostBody
 
 export default async function Blog() {
     const postsResponse = await fetch(
-        process.env.STRAPI_URL! + "/api/blog-posts",
+        process.env.STRAPI_URL! + "/api/blog-posts?sort=publishedAt:desc",
         {
             cache: "no-cache"
         }
@@ -41,12 +41,14 @@ export default async function Blog() {
     return (
         <section className="padding-container">
             <PageTitle>blog</PageTitle>
-            {postsBody.data.map((blogPost, index) => (
-                <BlogPostDisplay
-                    key={index}
-                    blogPost={blogPost}
-                />
-            ))}
+            <div className="flex flex-col gap-8">
+                {postsBody.data.map((blogPost, index) => (
+                    <BlogPostDisplay
+                        key={index}
+                        blogPost={blogPost}
+                    />
+                ))}
+            </div>
         </section>
     );
 }

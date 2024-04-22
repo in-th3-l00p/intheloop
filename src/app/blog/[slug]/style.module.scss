@@ -2,7 +2,64 @@
     hr {
         @apply my-2
     }
+
     img {
-        @apply mx-auto my-8;
+        @apply mx-auto my-8 max-h-[500px];
+    }
+
+    h1 {
+        @apply text-3xl font-bold my-4;
+    }
+
+    h2 {
+        @apply text-2xl font-bold my-4;
+    }
+
+    h3 {
+        @apply text-xl font-bold my-4;
+    }
+
+    h4 {
+        @apply text-lg font-bold my-4;
+    }
+
+    p {
+        @apply my-4;
+    }
+
+    ul {
+        @apply list-disc list-inside my-4;
+    }
+
+    ol {
+        @apply list-decimal list-inside my-4;
+    }
+
+    blockquote {
+        @apply border-l-4 border-gray-300 pl-4 my-4;
+    }
+
+    a {
+        @apply text-blue-500 underline;
+    }
+
+    pre {
+        @apply my-4;
+    }
+
+    code {
+        @apply bg-gray-100 p-1;
+    }
+
+    table {
+        @apply w-full my-4;
+    }
+
+    th {
+        @apply bg-gray-200;
+    }
+
+    td {
+        @apply bg-gray-100;
     }
 }
