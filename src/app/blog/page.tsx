@@ -30,7 +30,12 @@ interface IndexBlogPostBody
 }
 
 export default async function Blog() {
-    const postsResponse = await fetch(process.env.STRAPI_URL! + "/api/blog-posts");
+    const postsResponse = await fetch(
+        process.env.STRAPI_URL! + "/api/blog-posts",
+        {
+            cache: "no-cache"
+        }
+    );
     const postsBody: IndexBlogPostBody = await postsResponse.json();
 
     return (
