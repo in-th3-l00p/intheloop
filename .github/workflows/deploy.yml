@@ -15,7 +15,5 @@ jobs:
         script: |
           cd ~/intheloop
           git pull origin main
-          docker build -t personal-image .
-          docker stop personal
-          docker rm -f personal
-          docker run --name personal -p 3000:3000 -d personal-image
+          /root/.nvm/versions/node/v20.12.2/bin/npm run build
+          /root/.nvm/versions/node/v20.12.2/bin/pm2 restart tiscacatalin.com
