@@ -15,5 +15,8 @@ jobs:
         script: |
           cd ~/intheloop
           git pull origin main
-          /root/.nvm/versions/node/v20.12.2/bin/npm run build
-          /root/.nvm/versions/node/v20.12.2/bin/pm2 restart tiscacatalin.com
+          alias npm=/root/.nvm/versions/node/v20.12.2/bin/npm
+          alias node=/root/.nvm/versions/node/v20.12.2/bin/node
+          alias pm2=/root/.nvm/versions/node/v20.12.2/bin/pm2
+          npm run build
+          pm2 restart tiscacatalin.com
