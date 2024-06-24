@@ -67,8 +67,8 @@ export default function Contact() {
                 <Channel
                     icon={"/icons/email.svg"}
                     iconAlt={"Email"}
-                    title={"Email address: tiscacatalin@intheloop.bio"}
-                    href={"mailto:tiscacatalin@intheloop.bio"}
+                    title={"Email address: admin@tiscacatalin.com"}
+                    href={"mailto:admin@tiscacatalin.com"}
                 >
                     tiscacatalin@intheloop.bio
                 </Channel>
