@@ -70,7 +70,7 @@ export default function Contact() {
                     title={"Email address: admin@tiscacatalin.com"}
                     href={"mailto:admin@tiscacatalin.com"}
                 >
-                    tiscacatalin@intheloop.bio
+                    admin@tiscacatalin.com
                 </Channel>
 
                 <Channel
