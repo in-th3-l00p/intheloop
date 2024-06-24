@@ -15,4 +15,7 @@ jobs:
         script: |
           cd ~/intheloop
           git pull origin main
-          bash -c "cd ~/intheloop && npm run build && pm2 restart tiscacatalin.com"
+          export NVM_DIR=~/.nvm
+          source ~/.nvm/nvm.sh  
+          npm run build
+          pm2 restart tiscacatalin.com
